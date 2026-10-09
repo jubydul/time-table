@@ -147,3 +147,22 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+
+dist-ssr
+*.local
+
+# Testing
+coverage
+*.lcov
+
+# Editor directories and files
+# .vscode/*
+# !.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
