@@ -1,5 +1,8 @@
 /**
- * Returns a new Date object with the time set to midnight (00:00:00).
+ * Creates a copy of the provided date with the time normalized to the start of the UTC day.
+ *
+ * @param date - The date to normalize.
+ * @returns A new Date instance with hours, minutes, seconds, and milliseconds set to zero.
  */
 export function startOfDay(date: Date): Date {
     const d = new Date(date);
@@ -8,7 +11,10 @@ export function startOfDay(date: Date): Date {
 }
 
 /**
- * Returns a new Date object with the time set to the end of the day (23:59:59.999).
+ * Creates a copy of the provided date with the time set to the very end of the UTC day.
+ *
+ * @param date - The date to normalize.
+ * @returns A new Date instance with the final millisecond of the day.
  */
 export function endOfDay(date: Date): Date {
     const d = new Date(date);
@@ -17,7 +23,11 @@ export function endOfDay(date: Date): Date {
 }
 
 /**
- * Adds the specified number of days to the given date.
+ * Adds a number of calendar days to a date without mutating the original value.
+ *
+ * @param date - The base date.
+ * @param days - The number of days to add; this can be positive or negative.
+ * @returns A new Date instance shifted by the specified number of days.
  */
 export function addDays(date: Date, days: number): Date {
     const d = new Date(date);
@@ -26,7 +36,11 @@ export function addDays(date: Date, days: number): Date {
 }
 
 /**
- * Checks if two dates are on the same day (ignoring time).
+ * Determines whether two dates fall on the same UTC calendar day.
+ *
+ * @param date1 - The first date to compare.
+ * @param date2 - The second date to compare.
+ * @returns True when both dates share the same year, month, and day, ignoring time-of-day.
  */
 export function isSameDay(date1: Date, date2: Date): boolean {
     return (
@@ -37,7 +51,10 @@ export function isSameDay(date1: Date, date2: Date): boolean {
 }
 
 /**
- * Formats a date as YYYY-MM-DD.
+ * Formats a Date as a YYYY-MM-DD string using UTC values.
+ *
+ * @param date - The date to format.
+ * @returns A string in ISO-like YYYY-MM-DD format for the given UTC date.
  */
 export function formatDate(date: Date): string {
     const year = date.getUTCFullYear();
